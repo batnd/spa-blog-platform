@@ -1,0 +1,123 @@
+@import "mixins";
+
+body, * {
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  @include container1200;
+  @media (max-width: $media-992) {
+    @include container992;
+  }
+  @media (max-width: $media-768) {
+    @include container768;
+  }
+  @media (max-width: $media-576) {
+    @include container576;
+  }
+}
+
+.button {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  @include montserrat600;
+  font-size: 16px;
+  transition: background-color .15s ease-in-out;
+}
+
+.button-color {
+  background-color: #5cb85c;
+  color: white;
+
+  &:not(:disabled):hover {
+    background-color: #529f52;
+
+    &:active {
+      background-color: #448344;
+    }
+  }
+
+  &:disabled {
+    background-color: rgba(92, 184, 92, 0.6);
+    cursor: not-allowed;
+  }
+}
+
+.button-color-red {
+  background-color: #e71c1c;
+  color: white;
+
+  &:not(:disabled):hover {
+    background-color: #d31313;
+
+    &:active {
+      background-color: #b00d0d;
+    }
+  }
+
+  &:disabled {
+    background-color: rgba(231, 28, 28, 0.6);
+    cursor: not-allowed;
+  }
+}
+
+.button-color-green {
+  background-color: #278726;
+  color: white;
+
+  &:not(:disabled):hover {
+    background-color: #1c701c;
+
+    &:active {
+      background-color: #156015;
+    }
+  }
+
+  &:disabled {
+    background-color: rgba(39, 135, 38, 0.6);
+    cursor: not-allowed;
+  }
+}
+
+.button-color-gray {
+  background-color: #f6f6f6;
+  color: #424242;
+
+  &:not(:disabled):hover {
+    background-color: #dadada;
+
+    &:active {
+      background-color: #c4c4c4;
+    }
+  }
+
+  &:disabled {
+    background-color: rgba(206, 206, 206, 0.6);
+    cursor: not-allowed;
+  }
+}
+
+.link-click {
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: .60;
+  }
+}

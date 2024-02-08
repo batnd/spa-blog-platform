@@ -1,0 +1,31 @@
+<div class='settings' *ngIf='currentUser'>
+  <div class='container'>
+    <div class='settings-content'>
+      <h1 class='content-title'>Settings</h1>
+      <mc-backend-error-messages *ngIf='backendErrors$ | async' [backendErrors]='backendErrors$ | async'></mc-backend-error-messages>
+      <form [formGroup]='form' (ngSubmit)='submit()'>
+        <fieldset class='form-main-group'>
+          <fieldset class='form-group'>
+            <input formControlName='image' type='text' class='form-control' placeholder='URL of profile picture'>
+          </fieldset>
+          <fieldset class='form-group'>
+            <input formControlName='username' type='text' class='form-control' placeholder='Username'>
+          </fieldset>
+          <fieldset class='form-group'>
+            <textarea formControlName='bio' class='form-control' placeholder='Short bio about you'></textarea>
+          </fieldset>
+          <fieldset class='form-group'>
+            <input formControlName='email' type='text' class='form-control' placeholder='Email'>
+          </fieldset>
+          <fieldset class='form-group'>
+            <input formControlName='password' type='text' class='form-control' placeholder='Password'>
+          </fieldset>
+          <button type='submit' class='button button-update button-color-green' [disabled]='form.invalid || (isSubmitting$ | async)'>Update settings</button>
+        </fieldset>
+      </form>
+      <div class='logout'>
+        <button type='button' class='button button-color-red' (click)='logout()'>Or click here to logout</button>
+      </div>
+    </div>
+  </div>
+</div>

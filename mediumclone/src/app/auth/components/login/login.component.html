@@ -1,0 +1,22 @@
+<div class='auth-page'>
+  <div class='container'>
+    <div class='auth-page-block'>
+      <h1 class='auth-page-title'>Welcome back.</h1>
+      <p class='auth-page-auth-title'>Sign In</p>
+      <mc-backend-error-messages class='error-messages-block' *ngIf='backendErrors$ | async' [backendErrors]='backendErrors$ | async'></mc-backend-error-messages>
+      <form [formGroup]='form' (ngSubmit)='onSubmit()' class='auth-page-form'>
+        <fieldset>
+          <fieldset>
+            <input formControlName='email' type='email' placeholder='Email'>
+          </fieldset>
+          <fieldset>
+            <input formControlName='password' type='password' placeholder='Password'>
+          </fieldset>
+          <button [disabled]='isSubmitting$ | async' type='submit' class='button button-color'>Sign in</button>
+        </fieldset>
+      </form>
+      <p class='auth-page-extra'>No account? <a class='link-click' [routerLink]="['/register']">Create one</a>
+      </p>
+    </div>
+  </div>
+</div>

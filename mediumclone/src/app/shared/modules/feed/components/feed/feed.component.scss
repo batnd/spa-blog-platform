@@ -1,0 +1,100 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixins";
+
+.feed-articles {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &:has(mc-loading) {
+    padding-top: 25px;
+  }
+
+  .articles {
+    display: flex;
+    flex-direction: column;
+
+    .article-preview {
+      border-top: 1px solid $text-color-lightGrey;
+      box-sizing: border-box;
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+
+      .article-meta {
+        display: flex;
+        justify-content: space-between;
+
+        .article-meta-user {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+
+            a {
+              display: flex;
+              align-items: center;
+
+              img {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+              }
+            }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+
+            a {
+              @include montserrat500;
+              color: $text-color-darkBlack;
+              font-size: 16px;
+            }
+
+            span {
+              @include montserrat400;
+              color: $text-color-grey-mid-dark;
+              font-size: 13px;
+            }
+          }
+        }
+
+        .article-meta-favorite {
+          display: flex;
+
+          .article-meta-favorite-button {
+            height: 100%;
+          }
+        }
+      }
+
+      .preview-link {
+        display: flex;
+        flex-direction: column;
+
+        .article-title {
+          @include montserrat600;
+          font-size: 24px;
+          color: $text-color-darkBlack;
+          margin-bottom: 5px;
+        }
+
+        .article-description {
+          @include montserrat400;
+          font-size: 16px;
+          color: $text-color-grey-mid-dark;
+          margin-bottom: 15px;
+        }
+
+        .article-tags {
+          color: $text-color-grey-mid-dark;
+        }
+      }
+    }
+
+    p {
+      color: $text-color-grey-mid-dark;
+    }
+  }
+}

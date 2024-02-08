@@ -1,0 +1,36 @@
+<div class='article-page'>
+  <div class='banner' [class.exists]='article'>
+    <div class='container' *ngIf='article'>
+      <h1>{{article.title}}</h1>
+      <div class='article-meta'>
+        <a class='article-meta-user-icon' [routerLink]="['/profiles', article.author.username]">
+          <img [src]='article.author.image'>
+        </a>
+        <div class='info'>
+          <a [routerLink]="['/profiles', article.author.username]">
+            {{article.author.username}}
+          </a>
+          <span class='date'>{{article.createdAt | date:'mediumDate'}}</span>
+        </div>
+        <div class='actions' *ngIf='isAuthor$ | async'>
+          <a class='button button-color-green' [routerLink]="['/articles', article.slug, 'edit']">
+            Edit Article
+          </a>
+          <button class='button button-color-red delete' (click)='deleteArticle()'>Delete article</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='article-body' [class.exists]='article'>
+      <mc-loading *ngIf='isLoading$ | async' [message]="'article'"></mc-loading>
+      <mc-error-message *ngIf='error$ | async' [message]="'Article is not found'"></mc-error-message>
+      <div class='article-content' *ngIf='article'>
+        <div>
+          <p>{{article.body}}</p>
+          <mc-tag-list [tags]='article.tagList'></mc-tag-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

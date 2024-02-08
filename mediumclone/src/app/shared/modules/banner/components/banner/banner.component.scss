@@ -1,0 +1,30 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixins";
+
+.banner {
+  background-color: $text-color-orange-banner;
+  padding: 90px 0;
+  border-top: 1px solid $text-color-darkBlack;
+  border-bottom: 1px solid $text-color-darkBlack;
+
+  .container {
+
+    .banner-content {
+
+      h1 {
+        @include lora500;
+        font-size: 105px;
+        color: $text-color-darkBlack;
+        margin-bottom: 35px;
+      }
+
+      p {
+        @include montserrat400;
+        font-size: 24px;
+        color: $text-color-darkBlack;
+        max-width: 550px;
+        line-height: 1.1;
+      }
+    }
+  }
+}

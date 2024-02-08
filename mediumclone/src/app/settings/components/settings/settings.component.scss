@@ -1,0 +1,92 @@
+@import "src/assets/styles/variables";
+
+@mixin formInput {
+  outline: none;
+  border: 1px solid $text-color-lightGrey;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Lora', sans-serif;
+  font-weight: 400;
+  color: #545454;
+  font-size: 18px;
+
+  &::placeholder {
+    color: #989898;
+  }
+}
+
+.settings {
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  .container {
+    display: flex;
+    justify-content: center;
+
+    .settings-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      row-gap: 15px;
+
+      h1.content-title {
+        font-family: "Lora", serif;
+        font-weight: 500;
+        font-size: 42px;
+      }
+
+      form {
+        width: 100%;
+
+        fieldset.form-main-group {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 15px;
+
+          fieldset.form-group {
+            width: 100%;
+
+            input, textarea {
+              width: 100%;
+              @include formInput;
+            }
+
+            input {
+              height: 50px;
+            }
+
+            textarea {
+              resize: vertical;
+              min-height: 150px;
+              max-height: 250px;
+            }
+          }
+
+          button {
+            height: 50px;
+            box-sizing: border-box;
+            padding: 10px;
+          }
+        }
+      }
+
+      div.logout {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid $text-color-lightGrey;
+        padding-top: 20px;
+
+        button {
+          height: 50px;
+          box-sizing: border-box;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

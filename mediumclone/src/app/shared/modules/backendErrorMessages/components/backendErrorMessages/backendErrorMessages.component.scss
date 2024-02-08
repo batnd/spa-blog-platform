@@ -1,0 +1,13 @@
+@import "../../../../../../assets/styles/styles";
+@import "../../../../../../assets/styles/mixins";
+.error-messages {
+  width: 100%;
+  padding-left: 5px;
+  list-style-position: inside;
+  color: $text-color-red-error;
+  @include lora400;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}

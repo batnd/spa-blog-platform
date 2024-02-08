@@ -1,0 +1,21 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixins";
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  column-gap: 5px;
+
+  .tag-item {
+    box-sizing: border-box;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background-color: $text-color-grey-light-tag;
+    @include montserrat400;
+    font-size: 13px;
+    color: $text-color-midGrey;
+    line-height: 20px;
+  }
+}

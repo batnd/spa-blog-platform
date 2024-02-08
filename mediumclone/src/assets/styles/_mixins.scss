@@ -1,0 +1,58 @@
+@mixin container1200 {
+  max-width: $container-width-1200;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@mixin container992 {
+  max-width: $container-width-992;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@mixin container768 {
+  max-width: $container-width-768;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@mixin container576 {
+  max-width: $container-width-576;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+@mixin lora400 {
+  font-family: "Lora", serif;
+  font-weight: 400;
+}
+@mixin lora500 {
+  font-family: "Lora", serif;
+  font-weight: 500;
+}
+@mixin lora600 {
+  font-family: "Lora", serif;
+  font-weight: 600;
+}
+@mixin montserrat400 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+@mixin montserrat500 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+@mixin montserrat600 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+@mixin montserrat700 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+@mixin navbarBrand {
+  font-family: "DMSerifDisplay", serif;
+  font-weight: 400;
+}

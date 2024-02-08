@@ -1,0 +1,38 @@
+<div class='feed-articles'>
+  <mc-loading [message]="'articles'" *ngIf='isLoading$ | async'></mc-loading>
+  <mc-error-message *ngIf='error$ | async'></mc-error-message>
+  <div class='articles' *ngIf='feed$ | async'>
+    <div class='article-preview' *ngFor='let article of (feed$ | async)?.articles'>
+      <div class='article-meta'>
+        <div class='article-meta-user'>
+          <a [routerLink]="['/profiles', article.author.username]">
+            <img [src]='article.author.image'>
+          </a>
+          <div class='info'>
+            <a [routerLink]="['/profiles', article.author.username]">
+              {{article.author.username}}
+            </a>
+            <span class='date'>{{article.createdAt}}</span>
+          </div>
+        </div>
+        <div class='article-meta-favorite'>
+          <mc-add-to-favorites class='article-meta-favorite-button'
+            [isFavorited]='article.favorited'
+            [articleSlug]='article.slug'
+            [favoritesCount]='article.favoritesCount'>
+          </mc-add-to-favorites>
+        </div>
+      </div>
+      <a [routerLink]="['/articles', article.slug]" class='preview-link'>
+        <p class='article-title'>{{article.title}}</p>
+        <p class='article-description'>{{article.description}}</p>
+        <mc-tag-list [tags]='article.tagList'></mc-tag-list>
+      </a>
+    </div>
+    <mc-pagination [total]="(feed$ | async)?.articlesCount"
+                   [limit]="limit"
+                   [url]="baseUrl"
+                   [currentPage]="currentPage"
+    ></mc-pagination>
+  </div>
+</div>

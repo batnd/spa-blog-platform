@@ -1,0 +1,42 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixins";
+
+.sidebar {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 10px;
+
+  &:has(mc-loading) {
+    padding: 45px 10px;
+  }
+
+  mc-loading {
+    margin-top: 24px;
+  }
+
+  .popular-tags {
+
+    .popular-tags-title{
+      @include montserrat400;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 5px;
+      row-gap: 5px;
+
+      a {
+        @include montserrat400;
+        font-size: 13px;
+        color: $text-color-midGrey;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background-color: $text-color-grey-mid-tag;
+        line-height: 20px;
+      }
+    }
+  }
+}

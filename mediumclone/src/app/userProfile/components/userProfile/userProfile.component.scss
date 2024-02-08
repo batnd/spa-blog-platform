@@ -1,0 +1,115 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/mixins";
+
+.profile {
+
+  .user-info {
+    background-color: $text-color-orange-banner;
+    border-top: 1px solid $text-color-darkBlack;
+    border-bottom: 1px solid $text-color-darkBlack;
+    //height: 350px;
+    box-sizing: border-box;
+    padding: 50px 0;
+
+    .container {
+      display: flex;
+      justify-content: center;
+
+      .user-info-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+
+        img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        h4 {
+          font-family: "Montserrat", sans-serif;
+          font-size: 26px;
+        }
+
+        div.actions {
+          display: flex;
+
+          a {
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    padding: 40px 0;
+
+    .container {
+
+      .main-content {
+        width: 100%;
+        display: flex;
+
+        .feed {
+          flex-grow: 1;
+
+          .articles-toggle {
+
+            .feed-toggle-nav {
+              display: flex;
+              list-style: none;
+              column-gap: 25px;
+
+              li.nav-item {
+                @include montserrat500;
+                display: flex;
+                transition: opacity .2s ease-in-out;
+
+                a {
+                  font-size: 16px;
+                  color: $text-color-grey-mid-dark;
+                  padding: 8px 0;
+
+                  &.hash {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 5px;
+
+                    svg {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      height: 16px;
+                      width: 16px;
+                      fill: $text-color-black-light;
+                    }
+                  }
+                }
+
+                &.active {
+                  border-bottom: 2px solid $text-color-lightGrey;
+
+                  a {
+                    color: $text-color-darkBlack;
+                  }
+                }
+
+                &:not(.active):hover {
+                  opacity: .60;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

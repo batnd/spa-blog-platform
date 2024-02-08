@@ -1,0 +1,50 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixins";
+
+.feed-toggle {
+
+  .feed-toggle-nav {
+    display: flex;
+    list-style: none;
+    column-gap: 25px;
+
+    li.nav-item {
+      @include montserrat500;
+      display: flex;
+      transition: opacity .2s ease-in-out;
+
+      a {
+        font-size: 16px;
+        color: $text-color-grey-mid-dark;
+        padding: 8px 0;
+
+        &.hash {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+
+          svg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 16px;
+            width: 16px;
+            fill: $text-color-black-light;
+          }
+        }
+      }
+
+      &.active {
+        border-bottom: 2px solid $text-color-lightGrey;
+
+        a {
+          color: $text-color-darkBlack;
+        }
+      }
+
+      &:not(.active):hover {
+        opacity: .60;
+      }
+    }
+  }
+}

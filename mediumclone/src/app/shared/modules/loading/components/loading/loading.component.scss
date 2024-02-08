@@ -1,0 +1,12 @@
+@import "../../../../../../assets/styles/variables";
+@import "../../../../../../assets/styles/mixins";
+
+div {
+  width: 100%;
+  text-align: center;
+  @include montserrat500;
+  font-size: 16px;
+  color: $text-color-grey-mid-dark;
+  box-sizing: border-box;
+  //padding: 24px 0;
+}

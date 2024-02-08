@@ -1,0 +1,12 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/components/auth-form";
+
+.auth-page {
+  padding-top: 50px;
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}

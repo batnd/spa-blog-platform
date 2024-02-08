@@ -1,0 +1,64 @@
+button {
+  height: 100%;
+  box-sizing: border-box;
+  min-width: 60px;
+  padding: 0 10px;
+
+  div.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+
+    div.heart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &.button-solid {
+    background-color: #2fa12e;
+    color: white;
+
+    div.content div.heart svg {
+      fill: white;
+    }
+
+    &:not(:disabled):hover {
+      background-color: #248d24;
+
+      &:active {
+        background-color: #187018;
+      }
+    }
+
+    &:disabled {
+      background-color: rgba(39, 135, 38, 0.6);
+      cursor: not-allowed;
+    }
+  }
+
+  &.button-outline {
+    border: 1px solid #2fa12e;
+    color: #2fa12e;
+    background-color: white;
+
+    div.content div.heart svg {
+      fill: #2fa12e;
+    }
+
+    &:not(:disabled):hover {
+      background-color: #248d24;
+      color: white;
+
+      div.content div.heart svg {
+        fill: white;
+      }
+
+      &:active {
+        background-color: #187018;
+      }
+    }
+  }
+}

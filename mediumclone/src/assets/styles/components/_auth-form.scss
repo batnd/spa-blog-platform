@@ -1,0 +1,95 @@
+@import "../variables";
+@import "../mixins";
+
+.auth-page-block {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+  row-gap: 16px;
+
+  @media (max-width: $media-768) {
+    width: 330px;
+  }
+  @media (max-width: $media-576) {
+    width: 100%;
+  }
+
+  .error-messages-block {
+    width: 100%;
+  }
+
+  .auth-page-title {
+    @include lora400;
+    color: $text-color-darkGrey;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 50px;
+  }
+
+  .auth-page-auth-title {
+    @include montserrat400;
+    color: $text-color-darkGrey;
+    font-size: 24px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .auth-page-extra {
+    @include montserrat400;
+    font-size: 14px;
+
+    a {
+      @include montserrat600;
+      font-size: 16px;
+      color: $text-color-green;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .auth-page-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      row-gap: 16px;
+
+      fieldset {
+
+        input {
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px solid #c7c7c7;
+          height: 51px;
+          border-radius: 5px;
+          outline: none;
+          padding: 12px 24px;
+          @include montserrat400;
+          font-size: 16px;
+
+          &:focus {
+            border-color: #4670a8;
+          }
+
+          &::placeholder {
+            color: #6B6B6B;
+          }
+        }
+      }
+
+      button {
+        height: 51px;
+        width: 120px;
+      }
+    }
+  }
+}

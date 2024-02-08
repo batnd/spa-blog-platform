@@ -1,0 +1,102 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.article-page {
+
+  .banner {
+    background-color: $text-color-orange-banner;
+    border-top: 1px solid $text-color-darkBlack;
+
+    &.exists {
+      padding: 90px 0;
+      border-bottom: 1px solid $text-color-darkBlack;
+    }
+
+    .container {
+
+      h1 {
+        //@include lora600;
+        @include montserrat700;
+        font-size: 42px;
+        line-height: 52px;
+        margin-bottom: 32px;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        height: 44px;
+
+        a.article-meta-user-icon {
+          display: flex;
+
+          img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            @include lora400;
+            font-size: 16px;
+            color: $text-color-darkBlack;
+          }
+
+          span {
+            @include lora400;
+            font-size: 14px;
+            color: rgba(3, 3, 3, 0.5);
+          }
+        }
+
+        div.actions {
+          height: 100%;
+          display: flex;
+          column-gap: 15px;
+
+          a.button, button.delete {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 5px 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .article-body {
+    padding: 40px 0 40px;
+
+    &.exists {
+      border-bottom: 1px solid $text-color-lightGrey;
+    }
+
+    .article-content {
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          @include montserrat400;
+          font-size: 18px;
+          color: $text-color-darkBlack;
+          margin-bottom: 32px;
+        }
+
+        mc-tag-list {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

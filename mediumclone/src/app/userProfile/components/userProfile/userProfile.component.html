@@ -1,0 +1,34 @@
+<div class='profile' *ngIf='userProfile'>
+  <div class='user-info'>
+    <div class='container'>
+      <div class='user-info-content'>
+        <img src='user-image' [src]='userProfile.image' alt='profile image'>
+        <h4>{{userProfile.username}}</h4>
+        <p *ngIf='userProfile.bio'>{{userProfile.bio}}</p>
+        <div class='actions'>
+          <a class='button button-color-green' *ngIf='!(isCurrentUserProfile$ | async)'>Follow User</a>
+          <a class='button button-color-gray' [routerLink]="['/settings']" *ngIf='isCurrentUserProfile$ | async'>Edit Profile Settings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='main'>
+    <div class='container'>
+      <div class='main-content'>
+        <div class='feed'>
+          <div class='articles-toggle'>
+            <ul class='feed-toggle-nav'>
+              <li class='nav-item' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a [routerLink]="['/profiles', userProfile.username]" >My Posts</a>
+              </li>
+              <li class='nav-item' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a [routerLink]="['/profiles', userProfile.username, 'favorites']">Favorites Posts</a>
+              </li>
+            </ul>
+          </div>
+          <mc-feed [apiUrl]='getApiUrl()'></mc-feed>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

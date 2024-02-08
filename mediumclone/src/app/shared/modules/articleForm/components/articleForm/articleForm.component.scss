@@ -1,0 +1,78 @@
+@import "src/assets/styles/variables";
+
+@mixin formInput {
+  outline: none;
+  border: 1px solid $text-color-lightGrey;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Lora', sans-serif;
+  font-weight: 400;
+  color: #545454;
+  font-size: 18px;
+
+  &::placeholder {
+    color: #989898;
+  }
+}
+
+.editor-page {
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  .container {
+    display: flex;
+    justify-content: center;
+
+    .page-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      row-gap: 15px;
+
+      mc-backend-error-messages {
+        align-self: flex-start;
+      }
+
+      form {
+        width: 100%;
+
+        fieldset.form-main-group {
+          display: flex;
+          flex-direction: column;
+          row-gap: 15px;
+
+          fieldset.form-group {
+            width: 100%;
+
+            input {
+              width: 100%;
+              height: 50px;
+              @include formInput;
+            }
+
+            textarea {
+              width: 100%;
+              @include formInput;
+              resize: vertical;
+              min-height: 250px;
+            }
+
+            button {
+              height: 50px;
+              box-sizing: border-box;
+              padding: 10px;
+            }
+
+            &:has(button) {
+              padding-top: 15px;
+              display: flex;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
